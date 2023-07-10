@@ -1,0 +1,857 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DATA GROUP</title>
+    <link rel="icon" href="logo.png">
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <style>
+        /*logo blue color=rgb(44,180,180)*/
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: sans-serif;
+        }
+
+        body {
+            align-items: center;
+            justify-content: center;
+            display: flex;
+            background-color: rgb(237, 236, 236);
+
+
+
+        }
+
+        .container {
+            width: 1366px;
+            background-image: url("Car_Factory.png");
+            background-repeat: no-repeat;
+            background-size: 100% 100vh;
+
+            background-attachment: fixed;
+
+            border-radius: 10px;
+
+        }
+
+        /*scrollbar*/
+        ::-webkit-scrollbar {
+            background-color: transparent;
+
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background-color: rgba(18, 231, 231, 0.792);
+            border-radius: 20px;
+
+
+        }
+
+        /*Top navbar*/
+        .top_nav {
+            height: 30px;
+            width: 100%;
+            background-color: rgb(229, 233, 237);
+            display: flex;
+            /*position: sticky;*/
+            top: 0px;
+            z-index: 10;
+            align-items: center;
+        }
+
+        .top_nav .nav1 {
+            width: 90%;
+        }
+
+
+        .top_nav .nav1 a {
+            color: rgb(44, 180, 180);
+            text-decoration: none;
+            border-right: 1px solid rgba(87, 81, 81, 0.716);
+            padding-right: 15px;
+        }
+
+        .top_nav .nav1 .mail::before {
+            content: "Mail:";
+            margin-left: 10px;
+            color: rgb(48, 46, 46);
+            border-left: 1px solid rgba(87, 81, 81, 0.716);
+            margin-left: 25px;
+            padding-left: 10px;
+
+        }
+
+        .top_nav .nav1 .contact::before {
+            content: "Contact no.:";
+            margin-left: 10px;
+            color: rgb(48, 46, 46);
+
+        }
+
+
+
+        .top_nav .nav2 .apps {
+            padding: 3px;
+            height: 23px;
+            width: 23px;
+            border-radius: 5px;
+            float: left;
+            color: rgb(48, 48, 48);
+
+        }
+
+        .top_nav .nav2 .apps:hover {
+            background-color: rgba(150, 156, 159, 0.57);
+        }
+
+        /*Second navbar*/
+        .rnav {
+            height: 80px;
+            width: 100%;
+            background-color: rgba(38, 50, 62, 0.865);
+            position: sticky;
+            top: 0px;
+            display: flex;
+            float: left;
+            z-index: 10;
+
+        }
+
+        .rnav .logo {
+            width: 25%;
+
+
+            text-align: center;
+        }
+
+        .rnav .logo img {
+            height: 80px;
+
+        }
+
+        .rnav .menu {
+            width: 50%;
+
+        }
+
+        .rnav .slogo {
+            width: 25%;
+
+            display: flex;
+            text-align: center;
+            justify-content: space-evenly;
+        }
+
+        .rnav .slogo img {
+
+            height: 80px;
+        }
+
+        .rnav .menu {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+        }
+
+        .rnav .menu a {
+            color: white;
+            text-decoration: none;
+            padding: 10px;
+            position: relative;
+
+            font-size: 110%;
+        }
+
+        .rnav .menu a:hover {
+            color: rgb(255, 255, 255);
+
+        }
+
+
+        .menu a:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: rgb(44, 180, 180);
+            transform: scaleX(0%);
+            transition: all 1s;
+            transform-origin: left;
+        }
+
+        .menu a:hover:before {
+            transform: scaleX(1);
+
+        }
+
+        .menu a:after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: rgb(44, 180, 180);
+            transform: scaleX(0);
+            transition: all 1s;
+            transform-origin: right;
+        }
+
+        .menu a:hover:after {
+            transform: scaleX(1);
+        }
+
+        .rnav .menu a:hover {
+            color: rgb(212, 212, 212);
+        }
+
+        .rav .menu a:active {
+            color: gold;
+        }
+
+
+        .trans {
+            height: 80px;
+            width: 100%;
+            background-color: transparent;
+        }
+
+        .image-slideshow {
+            max-width: 100%;
+            max-height: 100vh;
+            position: relative;
+            margin: auto;
+            background-color: rgb(0, 0, 0);
+            overflow: hidden;
+            display: flex;
+        }
+
+        .image-slideshow img {
+            width: 100%;
+            height: 88vh;
+            overflow: hidden;
+
+            border: none;
+
+        }
+
+        .fade {
+            animation-name: fade;
+            animation-duration: 2s;
+        }
+
+        @keyframes fade {
+            from {
+                opacity: .9
+            }
+
+            to {
+                opacity: 1
+            }
+        }
+
+        .welcome {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 88%;
+            width: 100%;
+            position: absolute;
+            top: 110px;
+            left: 0;
+
+            background-color: rgba(40, 40, 40, 0.555);
+
+        }
+
+        .welcome .bb {
+            display: flex;
+            position: absolute;
+            border-bottom: 2px dashed rgb(255, 187, 0);
+            border-width: 0%;
+            padding-bottom: 20px;
+
+        }
+
+        .welcome .bb .static-txt {
+            color: white;
+            font-size: 80px;
+            font-weight: 400;
+
+        }
+
+        .welcome .bb .dynamic-txt {
+            margin-left: 20px;
+            line-height: 90px;
+            margin-right: 20px;
+            overflow: hidden;
+            height: 90px;
+        }
+
+        .dynamic-txt li {
+            list-style: none;
+            font-size: 80px;
+            font-weight: 500;
+            top: 0;
+            color: rgb(30, 221, 221);
+            animation: shift 3s steps(2) infinite;
+            position: relative;
+
+        }
+
+        @keyframes shift {
+            100% {
+                top: -180px;
+            }
+        }
+
+        .dynamic-txt li span::after {
+            content: "";
+            position: absolute;
+            background: rgb(0, 0, 0);
+            height: 100%;
+            width: 100%;
+            border-left: 2px solid rgb(30, 221, 221);
+            left: 0;
+            top: 0;
+            animation: typing 1.5s steps(10) infinite;
+
+        }
+
+        .dynamic-txt li span {
+            position: relative;
+            background-color: rgb(0, 0, 0);
+            padding-left: 5px;
+            padding-right: 5px;
+            font-family: "Lucida Console", Courier, monospace;
+        }
+
+        @keyframes typing {
+            100% {
+                left: 100%;
+                margin: 0 -30px 0 30px;
+            }
+        }
+
+
+
+
+        .about {
+            height: 100vh;
+            width: 100%;
+            display: flex;
+
+            justify-content: center;
+        }
+
+        .about .abt1 {
+            height: 100vh;
+            width: 100%;
+
+            background-image: url("about_back1.jpg");
+            background-size: cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .about .abt1 .ciso {
+            background-color: white;
+
+            justify-content: center;
+            align-items: center;
+
+            display: block;
+            height: 80vh;
+            width: 400px;
+            border-top-left-radius: 15px;
+            border-bottom-left-radius: 15px;
+            box-shadow: 0px 5px 10px rgb(185, 167, 188);
+        }
+
+        .ciatf {
+
+            background-color: white;
+            overflow: hidden;
+            align-items: center;
+            box-shadow: 6px 5px 10px rgb(185, 167, 188);
+            justify-content: center;
+            border-top-right-radius: 15px;
+            border-bottom-right-radius: 15px;
+            display: flex;
+            height: 80vh;
+            width: 600px;
+        }
+
+        .count {
+            height: 350px;
+            width: 100%;
+            background-color: #63a2bbe2;
+            display: flex;
+            color: white;
+
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+        }
+
+        .count .c {
+            height: 100%;
+            width: 33.33%;
+
+            display: flex;
+            color: white;
+
+            justify-content: center;
+            align-items: center;
+        }
+
+        .count .p {
+            height: 100%;
+            width: 33.33%;
+
+            display: flex;
+            color: white;
+
+            justify-content: center;
+            align-items: center;
+        }
+
+        .count .cl {
+            height: 100%;
+            width: 33.33%;
+
+            display: flex;
+            color: white;
+
+            justify-content: center;
+            align-items: center;
+        }
+
+        .count .cl .p .c h2 {
+            width: 100%;
+
+        }
+
+        .message {
+            position: fixed;
+            bottom: 10px;
+            right: 10px;
+            border-radius: 100px;
+            background-color: transparent;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 75px;
+            width: 75px;
+            transition: 0.25s;
+
+        }
+
+        .message:hover {
+            background-color: rgba(234, 233, 233, 0.704);
+        }
+
+        .message img {
+            height: 70px;
+            width: 70px;
+            border-radius: 100px;
+
+        }
+
+        .vision {
+            width: 100%;
+            height: 450px;
+            background-color: white;
+            background-image: url("about_back.jpg");
+            background-size: cover;
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+        }
+
+
+        .vision .photo {
+            overflow: hidden;
+            width: 27%;
+            height: 350px;
+            background-color: rgb(255, 255, 255);
+            border-radius: 10px;
+            box-shadow: 5px 5px 10px rgb(147, 145, 147);
+            text-align: center;
+            align-items: center;
+            justify-content: center;
+            display: flex;
+            position: relative;
+        }
+
+
+        .vision .a:before {
+            content: "VISION: We are committed to becoming a world class supplier of Innovative Automotive Solutions.";
+            /*font-weight: bold;*/
+            font-size: 140%;
+            color: #000;
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(230, 244, 252, 0.839);
+            transform: translateY(-100%);
+            transition: all 1s;
+            /* center */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .vision .a:hover:before {
+            transform: translateY(0);
+        }
+
+
+        .vision .b:before {
+            content: "MISSION: To exceed our customer's expectations in Quality, Delivery, and Cost through continuous improvement and customer interaction.";
+            /*font-weight: bold;*/
+            font-size: 140%;
+            color: #000;
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(230, 244, 252, 0.777);
+            transform: translateY(-100%);
+            transition: all 1s;
+            /* center */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .vision .b:hover:before {
+            transform: translateY(0);
+        }
+
+
+        .vision .c:before {
+            content: "INSPITATION: Our organization is inspired by the Make-in-India initiative to take Indian manufacturing to newer heights.";
+            /*font-weight: bold;*/
+            font-size: 140%;
+            color: #000;
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(230, 244, 252, 0.777);
+            transform: translateY(-100%);
+            transition: all 1s;
+            /* center */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .vision .c:hover:before {
+            transform: translateY(0);
+        }
+
+        .email {
+            height: 200px;
+            width: 100%;
+            background-color: rgb(210, 218, 255);
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+            background-image: url("input_bgc.png");
+            background-repeat: no-repeat;
+            background-size: 200px;
+
+
+        }
+
+        .email h1 {
+            font-weight: normal;
+            font-size: 30px;
+            display: inline-block;
+            background-color: white;
+            color: rgb(136, 157, 253);
+            padding: 10px 40px;
+            margin-top: 10px;
+            clip-path: polygon(0% 20%, 100% 0%, 90% 80%, 10% 100%);
+            text-shadow: 2px 2px 3px rgb(102, 252, 232);
+        }
+
+        .email .talk {
+            display: block;
+            width: 40%;
+            height: 45px;
+            margin-top: 25px;
+            margin-left: 30%;
+            padding: 10px 30px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: large;
+            box-sizing: border-box;
+            
+        }
+        .email .send{
+            height: 35px;
+            border: none;
+            width: 110px;
+            background-color: rgb(0, 153, 255);
+            color: white;
+            font-size: large;
+            margin-top: 5px;
+        }
+        .df{
+            height: 40px;
+            background-color:#535871;
+            color: white;
+            text-align: center;
+            font-size: 12px;
+            align-items: center;
+            display: flex;
+            justify-content: center;
+            
+        }
+        .df h1{
+            font-weight: lighter;
+        }
+        .footer{
+            height: 310px;
+            background-color:#707699;
+            /*background-image:linear-gradient(#002366 ,#1034A6 ) ;*/
+            position: relative;
+        }
+    </style>
+</head>
+
+<body>
+    <section class="container">
+        <div class="top_nav">
+            <div class="nav1">
+                <a href="mailto:marketing@datagroup.co.in" class="mail">marketing@datagroup.co.in</a>
+
+
+                <a href="tel:+9118001937983" class="contact">+91 1800 1937 983</a>
+            </div>
+            <div class="nav2">
+                <a href="https://www.facebook.com/datagroupbawal/" target="_blank"><ion-icon name="logo-facebook"
+                        class="apps facebook"></ion-icon></a>
+                <a href="https://www.linkedin.com/company/datagroupbawal" target="_blank"><ion-icon name="logo-linkedin"
+                        class="apps li"></ion-icon></a>
+                <ion-icon name="logo-instagram" class="apps insta"></ion-icon>
+            </div>
+        </div>
+
+        <div class="rnav">
+            <div class="logo"><img src="logo.png"></div>
+            <div class="menu">
+                <a href="https://www.youtube.com/">Home</a>
+                <a href="">Contact Us</a>
+                <a href="">Products</a>
+                <a href="">Companies</a>
+                <a href="">Clients</a>
+                <a href="">More</a>
+
+            </div>
+            <div class="slogo">
+                <img src="iso9001-removebg-preview.png">
+                <img src="Screenshot 2023-07-05 000051.png" style="border-radius: 100%;">
+            </div>
+        </div>
+        <div class="trans"></div>
+        <div class="image-slideshow">
+            <div class="image fade">
+                <img src="globalchain1.png" alt="Mountain Top">
+            </div>
+            <div class="image fade">
+                <img src="scru1.png" alt="Palm Trees">
+            </div>
+            <div class="image fade">
+                <img src="fan2.png" alt="Neon Sign">
+            </div>
+            <div class="image fade">
+                <img src="factory1.png" alt="Neon Sign">
+            </div>
+        </div>
+        <div class="welcome">
+            <div class="bb">
+                <div class="static-txt">
+                    <p>Data Group</p>
+                </div>
+                <ul class="dynamic-txt">
+                    <li><span>Welcomes!</span></li>
+                    <li><span>Respects!</span></li>
+                </ul>
+                <div class="static-txt">
+                    <p>you.</p>
+                </div>
+            </div>
+
+        </div>
+        <div class="about">
+            <div class="abt1">
+                <div class="ciso">
+                    <h2
+                        style="font-size: 3.5vh; width: 90%; height: 4.5vh; border-bottom: 2px solid rgb(160, 160, 160);margin-top: 12px;font-weight: lighter ;margin-left: 5%;">
+                        About</h2>
+                    <p
+                        style="text-align: center;padding-top: 15px; font-family:'Lucida Console', Courier, monospace ;font-size: 2.4vh;">
+                        Since 2000</p><br>
+                    <p style="text-align: center; padding: 0px 20px;font-size: 2.2vh;">Our passion for <mark style="background-color: rgba(155, 119, 251, 0.453);"> Automotive
+                        industry</mark>
+                        and our unique experience has brought us all together to share what we love. As a group we have
+                        a vision that ranges from creating the most efficient solutions and providing our customers with
+                        the best automotive products that we can. </p>
+
+                    <p
+                        style="text-align: center;padding-top: 30px;padding-bottom: 15px; font-family:'Lucida Console', Courier, monospace ;font-size: 2.4vh;">
+                        What We Look For</p>
+                    <p style="text-align: center; padding: 0px 20px;font-size: 2.2vh;">They are the best to do business
+                        with"- is our motto! and it is what we like hearing from our customers.
+                        <mark style="background-color: rgba(155, 119, 251, 0.453);">We look to solve any automotive
+                            issues that OEMs face.</mark>
+                    </p>
+
+                    <p
+                        style="text-align: center;padding-top: 30px;padding-bottom: 15px; font-family:'Lucida Console', Courier, monospace ;font-size: 2.4vh;">
+                        Where To Find Us</p>
+                    <p style="text-align: center; padding: 0px 20px;font-size: 2.2vh;">
+                        Plot 101, Saraswati Vihar, Near Matrika Hospital, Bawal-Rewari Road, Rewari, Haryana, 123401</p>
+                </div>
+                <div class="ciatf"><img src="aboutimg2.jpg"></div>
+            </div>
+        </div>
+        <div class="count">
+            <div class="c">
+                <h1>Company</h1>
+                <div id="company" style="font: 800 50px system-ui;">4</div>
+            </div>
+            <div class="p">
+                <h1>Products</h1>
+                <div id="products" style="padding: 0% 25%;font: 800 50px system-ui;">39</div>
+            </div>
+            <div class="cl">
+                <h1>Clients</h1>
+                <div id="clients" style="font: 800 50px system-ui;">15</div>
+            </div>
+        </div>
+
+
+
+
+        <div class="vision">
+            <div class="photo a"><img src="visionimgc.png" style="overflow: hidden;height: 300px;width: 100%;"></div>
+
+            <div class="photo b"><img src="missionimgc1.png" style="width: 300px;"></div>
+
+
+            <div class="photo c"><img src="makeinindiac.png" style="width: 300px;"></div>
+
+        </div>
+
+        <div class="email">
+            <h1>Let's talk business!</h1>
+            <input class="talk" type="email" placeholder="Email Address">
+            <input class="send" type="submit">
+        </div>
+
+
+        <div class="footer">
+            
+        </div>
+        <div class="df">
+            <h1>Copyright © 2023 DATA GROUP - All Rights Reserved.</h1>
+        </div>
+    </section>
+
+    <script>
+        let index = 0;
+        displayImages();
+        function displayImages() {
+            let i;
+            const images = document.getElementsByClassName("image");
+            for (i = 0; i < images.length; i++) {
+                images[i].style.display = "none";
+            }
+            index++;
+            if (index > images.length) {
+                index = 1;
+            }
+            images[index - 1].style.display = "block";
+            setTimeout(displayImages, 3000);
+        }
+    </script>
+
+
+
+    <script>
+        function animateValue(obj, start, end, duration) {
+            let startTimestamp = null;
+            const step = (timestamp) => {
+                if (!startTimestamp) startTimestamp = timestamp;
+                const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+                obj.innerHTML = Math.floor(progress * (end - start));
+                if (progress < 1) {
+                    window.requestAnimationFrame(step);
+                }
+            };
+            window.requestAnimationFrame(step);
+        }
+
+        const obj = document.getElementById("company");
+        animateValue(obj, -4, 0, 1000);
+    </script>
+
+
+    <script>
+        function animateValue1(obj1, start, end, duration) {
+            let startTimestamp = null;
+            const step = (timestamp) => {
+                if (!startTimestamp) startTimestamp = timestamp;
+                const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+                obj.innerHTML = Math.floor(progress * (end - start));
+                if (progress < 1) {
+                    window.requestAnimationFrame(step);
+                }
+            };
+            window.requestAnimationFrame(step);
+        }
+
+        const obj1 = document.getElementById("products");
+        animateValue1(obj1, -39, 0, 3000);
+    </script>
+
+
+    <script>
+        function animateValue2(obj2, start, end, duration) {
+            let startTimestamp = null;
+            const step = (timestamp) => {
+                if (!startTimestamp) startTimestamp = timestamp;
+                const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+                obj.innerHTML = Math.floor(progress * (end - start));
+                if (progress < 1) {
+                    window.requestAnimationFrame(step);
+                }
+            };
+            window.requestAnimationFrame(step);
+        }
+
+        const obj2 = document.getElementById("clients");
+        animateValue2(obj2, -15, 0, 2000);
+    </script>
+    <div class="message"><img src="messagebtn6c.png"></div>
+</body>
+
+</html>
